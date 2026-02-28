@@ -1,0 +1,224 @@
+:root {
+    --maroon: #800000;
+    --dark-maroon: #5a0000;
+    --text-main: #333;
+    --gray-light: #f4f4f4;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-main);
+    line-height: 1.6;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.main-header {
+    background-color: var(--maroon);
+    color: white;
+    padding: 80px 0;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.main-header h1 {
+    font-size: 3rem;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-weight: 300;
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+.header-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 18px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.header-nav a:hover {
+    background: white;
+    color: var(--maroon);
+}
+
+
+.layout-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+
+.layout-flex > main {
+    flex: 2;
+    min-width: 300px;
+}
+
+
+.layout-flex > aside {
+    flex: 1;
+    min-width: 250px;
+}
+
+
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--maroon);
+}
+
+.post-card {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+
+
+.post-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.post-card h3 + .meta {
+    color: #888;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+
+.post-card > p {
+    margin-bottom: 15px;
+}
+
+
+.post-card h3 ~ p {
+    color: var(--text-main);
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.tag {
+    background: var(--gray-light);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.read-more {
+    color: var(--maroon);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: var(--dark-maroon);
+}
+
+
+
+.widget {
+    margin-bottom: 45px;
+    padding: 20px;
+    background: var(--gray-light);
+    border-radius: 8px;
+}
+
+
+.widget h4 {
+    border-bottom: 2px solid var(--maroon);
+    display: inline-block;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+
+.widget h4 + p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* CSS Combinator: General Sibling Combinator (all following paragraphs) */
+.widget h4 ~ p {
+    font-size: 0.95rem;
+}
+
+.widget input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.btn-maroon {
+    background: var(--maroon);
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.btn-maroon:hover {
+    background: var(--dark-maroon);
+}
+
+
+
+footer {
+    padding: 60px 0;
+    border-top: 1px solid #eee;
+    text-align: center;
+    color: #999;
+    margin-top: 40px;
+}
+
+
+
+@media (max-width: 800px) {
+    .layout-flex {
+        flex-direction: column;
+    }
+    
+    .layout-flex > main,
+    .layout-flex > aside {
+        flex: 1;
+        min-width: 100%;
+    }
+    
+    .main-header h1 {
+        font-size: 2rem;
+    }
+    
+    .header-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+}

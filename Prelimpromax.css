@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #800000;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header nav {
+    margin-top: 20px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border: 1px solid white;
+    border-radius: 4px;
+}
+
+/* Main Layout */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+.content {
+    flex: 3;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.sidebar {
+    flex: 1;
+}
+
+/* Projects Styling */
+h2 {
+    margin-bottom: 10px;
+}
+
+/* Adjacent Sibling Combinator: Style the line immediately following the header */
+h2 + .header-divider {
+    border: 0;
+    border-top: 2px solid #800000;
+    margin-bottom: 25px;
+}
+
+.project-entry {
+    margin-bottom: 20px;
+}
+
+.project-meta {
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.project-footer {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.tag {
+    background-color: #eee;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    margin-right: 10px;
+}
+
+.project-footer > a {
+    color: #800000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-footer > a:hover {
+    text-decoration: underline;
+}
+
+.post-divider {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+.widget {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.widget h3 {
+    margin-bottom: 10px;
+}
+
+.widget input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.widget button {
+    width: 100%;
+    padding: 8px;
+    background-color: #800000;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

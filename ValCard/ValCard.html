@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Valentine's Proposal Card</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        body {
+            background-color: #ffb6c1; /* Pastel pink */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Times New Roman', serif; /* Changed to Times New Roman */
+            margin: 0;
+        }
+        .card {
+            width: 400px;
+            height: 300px;
+            background-color: #fff;
+            border: 2px solid #ff69b4;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 10px; /* Optional: Rounded corners for a softer look */
+        }
+        .gif {
+            display: none; /* Hidden initially */
+            max-width: 200px; /* Smaller size for GIF */
+            height: auto;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+        .heart {
+            font-size: 50px;
+            color: red;
+            margin-bottom: 20px;
+        }
+        .message {
+            font-size: 22px; /* Increased from 18px */
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px; /* Increased from 16px */
+            font-family: 'Times New Roman', serif; /* Explicitly set for buttons */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        #yes {
+            background-color: #ff1493;
+            color: white;
+            transform: scale(1);
+        }
+        #no {
+            background-color: #ccc;
+            color: black;
+            /* Removed position: absolute; to keep it beside Yes */
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="message">Will you be my Valentine?</div>
+        <div class="buttons">
+            <button id="yes">Yes</button>
+            <button id="no">No</button>
+        </div>
+        <img class="gif" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmJ4eHFvYmwwZHlrNmFyZmNpeGl5MjZzOTl1a2p2M2UwOGVscDJlOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wrBURfbZmqqXu/giphy.gif" alt="Celebration GIF"> <!-- Your GIF URL -->
+    </div>
+    <script>
+        const noButton = document.getElementById('no');
+        const yesButton = document.getElementById('yes');
+        const message = document.querySelector('.message');
+        const buttons = document.querySelector('.buttons');
+        const gif = document.querySelector('.gif');
+        let yesScale = 1;
+
+        // Move "No" button on hover
+        noButton.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+            noButton.style.position = 'absolute'; // Temporarily make it absolute to move
+        });
+        noButton.addEventListener('click', () => {
+            yesScale += 0.2;
+            yesButton.style.transform = `scale(${yesScale})`;
+        });
+
+        // Change message, hide buttons, show GIF, and trigger confetti on "Yes" click
+        yesButton.addEventListener('click', () => {
+            message.textContent = 'I know you could not resist me. Happy Valentines Day.';
+            buttons.style.display = 'none';
+            gif.style.display = 'block';
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        });
+    </script>
+</body>
+</html>
+
+<!-- 
+Reflection:
+1. AI tool that I used was Blackbox.AI
+2. It helped me in a way that it created the html code and mostly all
+3. I modified the colors, fonts, and the winking gif at the end
+4. I learned that this could be another way of asking your special someone to be your valentine if you are not together physically.
+-->
